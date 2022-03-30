@@ -1,0 +1,2 @@
+- Lancer la commande composer install pour mettre a jour le vendor
+- Lien vers nom_project/new pour voir la liste des personnages (company/new)
