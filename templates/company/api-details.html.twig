@@ -1,0 +1,8 @@
+{% for key,res in results %}
+    {% if res is not iterable %}
+        <div class="row">
+            <div class="col-4"><b>{{ key }}</b></div>
+            <div class="col-6">{{ res }}</div>
+        </div>
+    {% endif %}
+{% endfor %}

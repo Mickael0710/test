@@ -1,0 +1,21 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+#    RewriteBase /
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ public/index.php [L,QSA]
+</IfModule>
+#DirectoryIndex public/index.php public/index.html
+#RewriteEngine on
+#RewriteBase /
+#
+#RewriteCond %{REQUEST_URI} !^/public/
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ /public/$1 [L]
+#RewriteEngine on
+#RewriteBase /company
+#RewriteCond %{REQUEST_URI} !^/public/
+#RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
+#RewriteCond ^ %1 [L,NE,R=302]
+#RewriteRule ^(.*)$ public/$1 [L, QSA]

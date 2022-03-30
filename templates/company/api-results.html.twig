@@ -1,0 +1,32 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for res in results %}
+            {% set name = res['name'] is defined ? res['name'] : (res['title'] is defined ? res['title'] : '') %}
+            <tr>
+                <th scope="row">
+                    {{ name }}
+                </th>
+                <td>
+                    {% if res['url'] is defined %}
+                        <a href="{{ res['url'] }}" data-custom_uri="{{ path('api_details_start_wars') }}" class="show-details">Voir</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="row w-100 text-center">
+    {% if previousPage is defined and previousPage %}
+        <div class="col-6"><a href="{{ previousPage }}" data-url_search="{{ path('api_search_start_wars', {'name' : name}) }}" class="paginate-ws"> Previous </a></div>
+    {% endif %}
+
+    {% if nextPage is defined and nextPage %}
+        <div class="col-6"><a href="{{ nextPage }}" data-url_search="{{ path('api_search_start_wars', {'name' : name}) }}" class="paginate-ws"> Next </a></div>
+    {% endif %}
+</div>
